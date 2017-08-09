@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+$default-border-color: #D1D1D1;
+$default-text-color: #464C51;
+$default-text-size: 14px;
+$default-text-line-height: 1.5em;
+
+$body-background-color: #F5F5F5;
+
+$header-border-bottom-size: 1px;
+$header-border-bottom-type: solid;
+$header-border-bottom-color: #D1D1D1;
+$header-background-color: #FFF;
+
+$footer-background-color: #232323;
+$footer-text-color: #FFF;
+$footer-padding-top: 50px;
+$footer-padding-botton: 5px;
+
+$copyright-text-size: 0.857em;
+
+$car-item-border-size: 5px;
+$car-item-border-type: solid;
+$car-item-border-color: #EBEBEB;
+$car-item-background-color: #FFF;
+$car-item-padding-top: 5px;
+$car-item-padding-right: 15px;
+$car-item-padding-bottom: 5px;
+$car-item-padding-left: 5px;
+$car-item-margin-bottom: 10px;
+$car-item-cursor: pointer;
+$car-item-location-color: #7B7B7B;
+
+$car-price-text-color: #FE7A0D;
+
+
+#paulzxc  {
+
+    /* -------------------
+    ---  GENERAL START
+    ------------------- */
+    body {
+        background: $body-background-color;
+        color: $default-text-color;
+        font-size: $default-text-size;
+        line-height: $default-text-line-height;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    /* -------------------
+    ---  HEADER START
+    ------------------- */
+    header {
+        border-bottom: $header-border-bottom-size $header-border-bottom-type $header-border-bottom-color;
+        background-color: $header-background-color;
+        text-align: center;
+    }
+    
+    /* -------------------
+    ---  CARS START
+    ------------------- */
+    #cars {
+        .car-item {
+            background-color: $car-item-background-color;
+            border: $car-item-border-size $car-item-border-type $car-item-border-color;
+            padding: $car-item-padding-top $car-item-padding-right $car-item-padding-bottom $car-item-padding-left;
+            cursor: $car-item-cursor;
+            margin-bottom: $car-item-margin-bottom;
+
+            .car-price {
+                color: $car-price-text-color;
+                text-align: right;
+            }
+
+            .car-location {
+                color: $car-item-location-color;
+            }
+        }
+
+    }
+
+    /* -------------------
+    ---  FOOTER START
+    ------------------- */
+    footer {
+        background-color: $footer-background-color;
+        color: $footer-text-color;
+        padding-top: $footer-padding-top;
+        padding-bottom: $footer-padding-botton;
+        
+        #copyright {
+            text-align: center;
+            font-size: $copyright-text-size;
+        }
+    }
+}

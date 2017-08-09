@@ -1,0 +1,15 @@
+<section id="car-detail">
+  <div class="container">
+    <div class="row">
+      <h3>{{ car?.name }}</h3>
+      <div id="car-detail-gallery">
+        <img src="{{ car?.main_picture }}" alt="">
+      </div>
+      <div id="car-detail-info">
+        <h3 class="car-detail-price">{{ car?.price }}</h3>
+        <small><span class="glyphicon glyphicon-map-marker"></span> Location {{ car?.location }}</small>
+        <p>{{ car?.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
