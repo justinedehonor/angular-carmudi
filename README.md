@@ -16,6 +16,11 @@ Run `$ json-server --watch api/cars.json` to start the server. Navigate to `http
 
 ## Requirements
 
+ - [Node JS](https://nodejs.org/en/)
+ - [Angular CLI](https://github.com/angular/angular-cli)
+ - [JSON Server](https://github.com/typicode/json-server)
+
+## Tasks
  - ~~To be able to show catalog page, you have to consume the data that it comes from [**cars.json**](cars.json)~~ **_Completed_**
  - ~~Data can only be displayed with Javascript, no other Programming Language can be used.~~ **_Completed_**
  - ~~You must use AJAX to display data~~ **_Completed_**
