@@ -2,13 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 import { CarService } from './services/car.service';
-import { NgxPaginationModule } from 'ngx-pagination';
+
+import { FilterPipe } from './pipes/filter.pipe';
 
 const routes = [
   { path: '', component: CarComponent },
@@ -19,11 +22,13 @@ const routes = [
   declarations: [
     AppComponent,
     CarComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(routes),
     NgxPaginationModule
   ],

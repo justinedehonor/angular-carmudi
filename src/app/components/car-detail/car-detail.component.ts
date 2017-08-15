@@ -11,14 +11,24 @@ import { Car } from '../../interfaces/car';
 export class CarDetailComponent implements OnInit {
 
   private car: Car;
+  private test: string;
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       let id = params['id'];
-      this.carService.getCarById(id).subscribe((car: Car) => this.car = car);
+      this.carService.getCarById(id).subscribe((car: Car) => {
+        this.car = car;
+        this.car.description = this.excerpt(this.car.description);
+      });
+      
+      // this.excerpt("Wew");
     });
+  }
+
+  excerpt(text: string) : string {
+    return text.split(" ").splice(0, 35).join(" ");
   }
 
 }

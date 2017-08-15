@@ -13,7 +13,7 @@ export class CarService {
     return this.http.get('http://localhost:3000/cars/').map((response: Response) => response.json());
   }
 
-  getCarById(id: Number) : Observable<Car> {
+  getCarById(id: number) : Observable<Car> {
     return this.http.get(`http://localhost:3000/cars/${id}`).map((response: Response) => response.json());
   }
 

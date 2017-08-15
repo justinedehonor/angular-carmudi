@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+
 $default-border-color: #D1D1D1;
 $default-text-color: #464C51;
 $default-text-size: 14px;
@@ -7,32 +11,71 @@ $default-text-line-height: 1.5em;
 
 $body-background-color: #F5F5F5;
 
-$header-border-bottom-size: 1px;
-$header-border-bottom-type: solid;
-$header-border-bottom-color: #D1D1D1;
+$header-border-bottom: 1px solid #D1D1D1;
 $header-background-color: #FFF;
+$header-padding: 30px 0 20px;
+$header-margin: 0 0 30px 0;
 
 $footer-background-color: #232323;
 $footer-text-color: #FFF;
-$footer-padding-top: 50px;
-$footer-padding-botton: 5px;
+$footer-padding: 20px 0 5px;
+$footer-margin: 50px 0 0 0;
 
 $copyright-text-size: 0.857em;
 
-$car-item-border-size: 5px;
-$car-item-border-type: solid;
-$car-item-border-color: #EBEBEB;
-$car-item-background-color: #FFF;
-$car-item-padding-top: 5px;
-$car-item-padding-right: 15px;
-$car-item-padding-bottom: 5px;
-$car-item-padding-left: 5px;
-$car-item-margin-bottom: 10px;
-$car-item-cursor: pointer;
+/* --------------------------
+   ---  CAR START
+   -------------------------- */
+$car-item-text-align: center;
 $car-item-location-color: #7B7B7B;
+$car-item-location-margin: 10px 0 0 0;
+$car-item-border: 5px solid #EBEBEB;
+$car-item-background-color: #FFF;
+$car-item-cursor: pointer;
+$car-item-padding: 10px;
+$car-item-margin: 0 0 10px 0;
+$car-item-name-margin: 10px 0 0 0;
+$car-item-price-margin: 10px 0 0 0;
 
 $car-price-text-color: #FE7A0D;
 
+/* --------------------------
+   ---  CAR DETAIL START
+   -------------------------- */
+$car-detail-location-margin: 0 0 30px 0;
+$car-detail-info-background-color: #FFF;
+$car-detail-info-padding: 20px;
+
+
+
+/* --------------------------
+   ---  PAGINATION START
+   -------------------------- */
+$pagination-controls-text-align: center;
+$pagination-controls-background-color: #186FB6;
+$pagination-controls-color: #FFF;
+$pagination-controls-border: 1px solid #186FB6;
+$pagination-controls-disabled-background-color: #FFF;
+$pagination-controls-disabled-color: #000;
+$pagination-controls-disabled-border: 1px solid #000;
+$pagination-controls-padding: 10px 15px;
+$pagination-controls-min-width: 130px;
+$pagination-controls-page-item-margin: 10px 10px 20px;
+
+/* --------------------------
+   ---  BREAK MEDIUM START
+   -------------------------- */
+$md-car-item-text-align: left;
+$md-car-item-price-text-align: right;
+
+$md-car-detail-info-min-height: 339px;
+$md-car-detail-gallery-min-height: 339px;
+
+/* --------------------------
+   ---  BREAK MEDIUM START
+   -------------------------- */
+$lg-car-detail-info-min-height: 412px;
+$lg-car-detail-gallery-min-height: 412px;
 
 #paulzxc  {
 
@@ -48,15 +91,43 @@ $car-price-text-color: #FE7A0D;
         img {
             max-width: 100%;
         }
+
+        .no-gutter {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        main {
+            min-height: 65vh;
+        }
     }
 
     /* -------------------
     ---  HEADER START
     ------------------- */
     header {
-        border-bottom: $header-border-bottom-size $header-border-bottom-type $header-border-bottom-color;
+        border-bottom: $header-border-bottom;
         background-color: $header-background-color;
         text-align: center;
+        padding: $header-padding;
+        margin: $header-margin;
+    }
+
+    /* --------------------------
+   ---  FILTER START
+   -------------------------- */
+    #filter {
+        margin-bottom: 20px;
+        text-align: center;
+        
+        label {
+            display: block;
+
+            @media screen and (min-width: $break-small) {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
     }
     
     /* -------------------
@@ -65,21 +136,110 @@ $car-price-text-color: #FE7A0D;
     #cars {
         .car-item {
             background-color: $car-item-background-color;
-            border: $car-item-border-size $car-item-border-type $car-item-border-color;
-            padding: $car-item-padding-top $car-item-padding-right $car-item-padding-bottom $car-item-padding-left;
+            border: $car-item-border;
             cursor: $car-item-cursor;
-            margin-bottom: $car-item-margin-bottom;
+            padding: $car-item-padding;
+            margin: $car-item-margin;
+            text-align: $car-item-text-align;
+            
+            @media screen and (min-width: $break-medium) {
+                text-align: $md-car-item-text-align;
+
+                .car-price {
+                    text-align: $md-car-item-price-text-align;
+                }
+            }
+
+            .car-name {
+                margin: $car-item-name-margin;
+            }
 
             .car-price {
                 color: $car-price-text-color;
-                text-align: right;
+                margin: $car-item-price-margin;
             }
 
             .car-location {
+                display: block;
+                margin: $car-item-location-margin;
                 color: $car-item-location-color;
             }
         }
+    }
 
+    /* -------------------
+    ---  CAR DETAIL START
+    ------------------- */
+    #car-detail {
+        #car-detail-price {
+            color: $car-price-text-color;
+        }
+
+        #car-detail-location {
+            margin: $car-detail-location-margin;
+            display: block;
+        }
+
+        #car-detail-info {
+            background-color: $car-detail-info-background-color;
+            padding: $car-detail-info-padding;
+
+            @media screen and (min-width: $break-medium) {
+                min-height: $md-car-detail-info-min-height;
+            }
+
+            @media screen and (min-width: $break-large) {
+                min-height: $lg-car-detail-info-min-height;
+            }
+        }
+
+        #car-detail-gallery {
+            @media screen and (min-width: $break-large) {
+                min-height: $lg-car-detail-gallery-min-height;
+            }
+        }
+    }
+
+    /* -------------------
+    ---  PAGINATION START
+    ------------------- */
+    #pagination-controls {
+
+        #pagination-pages {
+            text-align: center;
+
+            .page-item {
+                display: inline-block;
+                margin: $pagination-controls-page-item-margin;
+                
+                a {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #pagination-nav {
+            a {
+                cursor: pointer;
+                text-align: $pagination-controls-text-align;
+                border: $pagination-controls-border;
+                color: $pagination-controls-color;
+                background-color: $pagination-controls-background-color;
+                padding: $pagination-controls-padding;
+                min-width: $pagination-controls-min-width;
+                display: inline-block;
+
+                &.disabled {
+                    border: $pagination-controls-disabled-border;
+                    color: $pagination-controls-disabled-color;
+                    background-color: $pagination-controls-disabled-background-color;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
     }
 
     /* -------------------
@@ -88,8 +248,8 @@ $car-price-text-color: #FE7A0D;
     footer {
         background-color: $footer-background-color;
         color: $footer-text-color;
-        padding-top: $footer-padding-top;
-        padding-bottom: $footer-padding-botton;
+        padding: $footer-padding;
+        margin: $footer-margin;
         
         #copyright {
             text-align: center;

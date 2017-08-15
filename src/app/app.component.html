@@ -1,9 +1,12 @@
 <header>
-  <a routerLink="/">Logo</a>
+  <a routerLink="/" id="logo"><img src="assets/images/logo.png" alt=""></a>
 </header>
 <main>
   <router-outlet></router-outlet>
 </main>
 <footer>
-  <p id="copyright">&copy; 2016 by Carmudi Philippines, Inc.</p>
+  <div class="container">
+    <a routerLink="/" id="footer-logo"><img src="assets/images/footer-logo.png" alt=""></a>
+    <p id="copyright">&copy; 2016 by Carmudi Philippines, Inc.</p>
+  </div>
 </footer>
