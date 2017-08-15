@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
+## Requirements
+
+ - [Node JS](https://nodejs.org/en/)
+ - [Angular CLI](https://github.com/angular/angular-cli)
+ - [JSON Server](https://github.com/typicode/json-server)
+
 ## Install Dependecies
 
 Run `npm install` to install the npm packages described in the **package.json**.
@@ -13,12 +19,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## JSON Server
 
 Run `$ json-server --watch api/cars.json` to start the server. Navigate to `http://localhost:3000/`.
-
-## Requirements
-
- - [Node JS](https://nodejs.org/en/)
- - [Angular CLI](https://github.com/angular/angular-cli)
- - [JSON Server](https://github.com/typicode/json-server)
 
 ## Tasks
  - ~~To be able to show catalog page, you have to consume the data that it comes from [**cars.json**](cars.json)~~ **_Completed_**
@@ -38,13 +38,13 @@ Run `$ json-server --watch api/cars.json` to start the server. Navigate to `http
 
  - ~~Make the layout responsive~~ **_Completed_**
  - ~~[Pagination](https://github.com/typicode/json-server#paginate) on Catalog Page, each page should have 10 listings~~ **_Used different approach_**
- - Add one text input on top of your catalog, every time you type something it should live filter the listings by name
-   - If you finished pagination earlier, this should be affected as well
+ - ~~Add one text input on top of your catalog, every time you type something it should live filter the listings by name~~ **_Completed_**
+   - ~~If you finished pagination earlier, this should be affected as well~~ **_Completed_**
  - Usage of Grunt or Gulp
  - ~~Usage of LESS or SASS~~ **_SCSS_**
  - ~~If you selected a listing, and then refresh the page, it shouldn't come back to catalog~~ **_Completed_**
  - ~~Usage of frontend frameworks (React, AngularJS, Ember, etc.)~~ **_Angular_**
 
 ## Note 
- - Framework (AngularJS) : Advanced client-side framework which is maintained by Microsoft
- - Pagination : Decided to use ngx-pagination instead of **json-server#paginate** since the data is not too large. Fetching all the data and display 10 items per page is better than fetching the data on each page when navigating.
+ - Framework (AngularJS) : Advanced client-side framework which is maintained by Microsoft.
+ - Pagination : Decided to use [ngx-pagination](https://github.com/michaelbromley/ngx-pagination/) instead of [json-server#paginate](https://github.com/typicode/json-server#paginate) since the data is not too large. Fetching all the data and display 10 items per page is better than fetching the data on each page when navigating.
