@@ -60,7 +60,11 @@ $pagination-controls-disabled-color: #000;
 $pagination-controls-disabled-border: 1px solid #000;
 $pagination-controls-padding: 10px 15px;
 $pagination-controls-min-width: 130px;
-$pagination-controls-page-item-margin: 10px 10px 20px;
+$pagination-controls-page-item-color: #232323;
+$pagination-controls-page-item-current-color: #FFF;
+$pagination-controls-page-item-current-background-color: #186FB6;
+$pagination-controls-page-item-padding: 5px 10px;
+$pagination-controls-page-item-margin: 10px 5px 20px;
 
 /* --------------------------
    ---  BREAK MEDIUM START
@@ -127,6 +131,10 @@ $lg-car-detail-gallery-min-height: 412px;
                 display: inline-block;
                 margin-right: 10px;
             }
+        }
+
+        input {
+            padding: 5px;
         }
     }
     
@@ -211,8 +219,15 @@ $lg-car-detail-gallery-min-height: 412px;
             .page-item {
                 display: inline-block;
                 margin: $pagination-controls-page-item-margin;
+                padding: $pagination-controls-page-item-padding;
                 
+                &.current {
+                    color: $pagination-controls-page-item-current-color;
+                    background-color: $pagination-controls-page-item-current-background-color;
+                }    
+
                 a {
+                    color: $pagination-controls-page-item-color;
                     cursor: pointer;
                 }
             }
